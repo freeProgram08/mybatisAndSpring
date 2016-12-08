@@ -39,6 +39,44 @@
             <artifactId>spring-beans</artifactId>
             <version>4.3.4.RELEASE</version>
         </dependency>
-
+    <!--    mybatis 支持spring组件包-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+       <!--数据库连接池jar-->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <!--spring jdbc相关jar-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.3.4.RELEASE</version>
+        </dependency>
+        <!--     spring事务相关jar-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>4.3.4.RELEASE</version>
+        </dependency>
     </dependencies>
+ <!--   指定jdk编译级别-->
+    <build>
+        <finalName>web_maven</finalName>
+        <!--解决idea源经常重置为1.5问题-->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
