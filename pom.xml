@@ -74,17 +74,17 @@
         </dependency>
 
        <!-- spring 网站相关jar-->
-     <!--   <dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>4.3.4.RELEASE</version>
-        </dependency>-->
+        </dependency>
         <!--spring mvc相关jar-->
-       <!-- <dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>4.3.4.RELEASE</version>
-        </dependency>-->
+        </dependency>
 
     </dependencies>
  <!--   指定jdk编译级别-->
