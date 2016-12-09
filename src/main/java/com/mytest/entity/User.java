@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 /**
  * 用户
  */
-@Repository
+
 public class User {
     /*标签的缺点只能赋值ref，不能赋值value*/
     private Integer id;

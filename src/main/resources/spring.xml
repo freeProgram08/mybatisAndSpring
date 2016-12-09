@@ -8,12 +8,17 @@
         http://www.springframework.org/schema/context/spring-context-2.5.xsd">
      <!--指定标签管理目录-->
     <context:component-scan base-package="com.mytest"/>
+    <!--配置jdbc连接池对象-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
+        <!--jdbc驱动地址-->
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+          <!--jdbc协议描述-->
         <property name="url" value="jdbc:mysql://localhost:3306/test" />
+      <!--  数据库用户名-->
         <property name="username" value="root" />
-        <property name="password" value="123456" />
+        <!--数据库密码-->
+        <property name="password" value="12345" />
         <!-- 初始化连接大小 -->
         <property name="initialSize" value="0"></property>
         <!-- 连接池最大数量 -->
@@ -25,16 +30,26 @@
         <!-- 获取连接最大等待时间 -->
         <property name="maxWait" value="60000"></property>
     </bean>
-
+   <!--配置mybatis 为了兼容spring扩展的 创建连接工厂对象-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+          <!-- 配置连接池属性值-->
+        <!--配置数据库连接 同config中配置jdbc连接部分-->
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+        <!--配置xml关联 同config 中的mappers标签-->
+         <!-- 配置mapper类型xml文件所在地址 相对路径方式-->
+        <!--classpath 默认路径代表的就是resource文件夹-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
 
-    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+   <!-- 创建mybatis关联接口对象-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--接口所有在文件夹地址  package方式-->
         <property name="basePackage" value="com.mytest.dao" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+        <!--配置mybatis工厂-->
+     <!--   sqlSessionFactoryBeanName配置的是在spring中定义的id值名称
+        不是一个对象 -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
+     <!--<import resource="spring-mvc.xml"/>-->
 </beans>

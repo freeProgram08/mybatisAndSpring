@@ -16,7 +16,7 @@ public class UserShow {
     默认会查找所有被创建bean符合类型匹配的bean对象*/
     /*如果查找到多个就会报错*/
    /*Resource ref赋值*/
-     @Resource
+
     private User user;
 
     public  void showUserName(){
