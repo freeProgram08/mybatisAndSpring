@@ -26,4 +26,8 @@ public class UserService {
         }
         return true;//登录成功
     }
+
+    public List<User> getUsers(){
+        return userDao.selectAll();
+    }
 }

@@ -74,16 +74,33 @@
         </dependency>
 
        <!-- spring 网站相关jar-->
+      <!--  是web插件的插孔jar  struts，struts2-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>4.3.4.RELEASE</version>
         </dependency>
         <!--spring mvc相关jar-->
+       <!--    是springmvc的核心实现jar-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>4.3.4.RELEASE</version>
+        </dependency>
+
+        <!--导入servlet相关jar-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <!--不打包-->
+            <scope>provided</scope>
+        </dependency>
+      <!-- 导入java标准标签库-->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
         </dependency>
 
     </dependencies>

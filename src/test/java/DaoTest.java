@@ -13,7 +13,6 @@ public class DaoTest {
         ClassPathXmlApplicationContext context=
                 new ClassPathXmlApplicationContext("spring.xml");
         /*UserService userService = context.getBean("userService", UserService.class);*/
-
         IUserDao iUserDao = context.getBean("IUserDao", IUserDao.class);
 
     }

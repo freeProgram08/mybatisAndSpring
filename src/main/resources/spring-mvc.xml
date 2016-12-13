@@ -30,9 +30,14 @@
         </property>
     </bean>-->
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
+   <!-- 封装，特殊处理重定向跟传递请求，
+   转为方法的返回值识别，这个返回值是String-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->
+       <!-- 配置的地址是相对webapp定位的-->
+        <!--方法返回的值前会默认加上该字符串-->
         <property name="prefix" value="/WEB-INF/jsp/" />
+        <!--方法返回的值后会默认加上该字符串-->
         <property name="suffix" value=".jsp" />
     </bean>
 

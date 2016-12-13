@@ -40,7 +40,6 @@
         <!--classpath 默认路径代表的就是resource文件夹-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
-
    <!-- 创建mybatis关联接口对象-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--接口所有在文件夹地址  package方式-->
@@ -51,5 +50,4 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
-     <!--<import resource="spring-mvc.xml"/>-->
 </beans>
